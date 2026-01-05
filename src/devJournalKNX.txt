@@ -1,0 +1,5 @@
+design a UI
+add pictures
+portrait mode, landscape mode
+scoreboard per stage
+fork repo
