@@ -1,6 +1,7 @@
-It's like puzzle bobble. 
+It's like puzzle bobble, and when you pop bubbles, photos of my niece will appear. 
 
-This is a Christmas/Birthday gift for my niece. When you pop bubbles, photos of her will appear. A letter is locked behind the first level.
+
+This is a Christmas/Birthday gift for her. A letter is locked behind the first level.
 
 
 This is a React + Vite project.
