@@ -33,6 +33,7 @@ export default function Level({ position=[0,0,0], scale=1 }) {
     }
   }))
 
+  // animate the box based on penalty
   useEffect(() => {
     const previousNumPenalty = numPenalty === 0 ? 0 : numPenalty - 1;
     api.start({
@@ -117,8 +118,6 @@ export default function Level({ position=[0,0,0], scale=1 }) {
     })
   }, [])
 
-  console.log('bubbles in level render:', bubbles);
-
   return <group scale={scale} position={position}>
     { bubbles.map((bubbleRow, rowIndex) => (
       bubbleRow.map((bubble, index) => {
@@ -180,7 +179,7 @@ export default function Level({ position=[0,0,0], scale=1 }) {
           bevelSegments={5} 
           position={[-3.5, 3, 0]}
         >
-          { level === 0 && `Bebe...\nI wrote a letter\nfor you...\nRestart?`}
+          { level === 0 && `Oops!\nRestart?`}
           { level === 1 && `This level\nis hard!\nRestart?`}
           <meshStandardMaterial color={'#e2ffa5'} />
         </Text3D>
