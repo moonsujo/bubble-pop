@@ -164,7 +164,7 @@ const bubbleSlice = createSlice({
           for (const [dc, dr] of directions) {
             const newRow = r + dr;
             const newCol = c + dc;
-            if (newRow >= 1 && newRow < state.bubbles.length &&
+            if (newRow >= 0 && newRow < state.bubbles.length &&
                 newCol >= 0 && newCol < state.bubbles[newRow].length &&
                 state.bubbles[newRow][newCol]) {
               queue.push([newRow, newCol]);
@@ -172,12 +172,10 @@ const bubbleSlice = createSlice({
           }
         }
       }
-      // start BFS from all bubbles in the top row
-      for (let col = 0; col < state.bubbles[0].length; col++) {
-        if (state.bubbles[0][col]) {
-          bfs(0, col);
-        }
-      }
+
+      // start BFS from top left bubble
+      bfs(0, 0);
+      
       // remove unvisited bubbles
       for (let i = 0; i < state.bubbles.length; i++) {
         for (let j = 0; j < state.bubbles[i].length; j++) {
